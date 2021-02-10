@@ -418,69 +418,10 @@
 	};
 };
 
-&spi1 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&spi1_pins_a>;
-	status = "disabled";
-};
-
 &uart4 {
-	pinctrl-names = "default", "sleep", "idle";
+	pinctrl-names = "default";
 	pinctrl-0 = <&uart4_pins_a>;
-	pinctrl-1 = <&uart4_sleep_pins_a>;
-	pinctrl-2 = <&uart4_idle_pins_a>;
 	status = "okay";
-};
-
-&uart5 {
-	pinctrl-names = "default", "sleep", "idle";
-	pinctrl-0 = <&uart5_pins_a>;
-	pinctrl-1 = <&uart5_sleep_pins_a>;
-	pinctrl-2 = <&uart5_idle_pins_a>;
-	status = "disabled";
-};
-
-&uart7 {
-	pinctrl-names = "default", "sleep", "idle";
-	pinctrl-0 = <&uart7_pins_c>;
-	pinctrl-1 = <&uart7_sleep_pins_c>;
-	pinctrl-2 = <&uart7_idle_pins_c>;
-	status = "disabled";
-};
-
-&uart8 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&uart8_pins_a>;
-	status = "disabled";
-};
-
-&usart1 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&usart1_pins_a>;
-	status = "disabled";
-};
-
-&usart2 {
-	pinctrl-names = "default", "sleep", "idle";
-	pinctrl-0 = <&usart2_pins_c>;
-	pinctrl-1 = <&usart2_sleep_pins_c>;
-	pinctrl-2 = <&usart2_idle_pins_c>;
-	status = "disabled";
-};
-
-&usart3 {
-	pinctrl-names = "default", "sleep", "idle";
-	pinctrl-0 = <&usart3_pins_b>;
-	pinctrl-1 = <&usart3_sleep_pins_b>;
-	pinctrl-2 = <&usart3_idle_pins_b>;
-	uart-has-rtscts;
-	status = "disabled";
-};
-
-&usart6 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&usart6_pins_a>;
-	status = "disabled";
 };
 
 &usbh_ehci {
@@ -489,9 +430,9 @@
 };
 
 &usbotg_hs {
+	dr_mode = "peripheral";
 	phys = <&usbphyc_port1 0>;
 	phy-names = "usb2-phy";
-	usb-role-switch;
 	status = "okay";
 };
 
@@ -501,14 +442,10 @@
 
 &usbphyc_port0 {
 	phy-supply = <&vdd_usb>;
-	vdda1v1-supply = <&reg11>;
-	vdda1v8-supply = <&reg18>;
 };
 
 &usbphyc_port1 {
 	phy-supply = <&vdd_usb>;
-	vdda1v1-supply = <&reg11>;
-	vdda1v8-supply = <&reg18>;
 };
 
 &vrefbuf {
