@@ -20,8 +20,6 @@
 		serial0 = &uart4;
 		serial1 = &usart3;
 		serial2 = &uart7;
-		serial3 = &uart5;
-		serial4 = &usart2;
 	};
 
 	chosen {
@@ -29,15 +27,7 @@
 	};
 };
 
-&usart2 {
-	status = "okay";
-};
-
 &usart3 {
-	status = "okay";
-};
-
-&uart5 {
 	status = "okay";
 };
 
