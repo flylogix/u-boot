@@ -52,6 +52,10 @@
 		interrupt-parent = <&intc>;
 	};
 
+	wifi_pwrseq:wifi-pwrseq{
+		compatible = "mmc-pwrseq-simple";
+	};
+
 	clocks {
 		clk_hse: clk-hse {
 			#clock-cells = <0>;
