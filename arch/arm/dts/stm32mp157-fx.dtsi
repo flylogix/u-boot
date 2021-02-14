@@ -1264,6 +1264,20 @@
 			status = "disabled";
 		};
 
+		spi6: spi@5c001000 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			compatible = "st,stm32h7-spi";
+			reg = <0x5c001000 0x400>;
+			interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>;
+			clocks = <&rcc SPI6_K>;
+			resets = <&rcc SPI6_R>;
+			dmas = <&mdma1 34 0x0 0x40008 0x0 0x0>,
+			       <&mdma1 35 0x0 0x40002 0x0 0x0>;
+			dma-names = "rx", "tx";
+			status = "disabled";
+		};
+
 		i2c4: i2c@5c002000 {
 			compatible = "st,stm32mp15-i2c";
 			reg = <0x5c002000 0x400>;
@@ -1299,6 +1313,21 @@
 			ts_cal2: calib@5e {
 				reg = <0x5e 0x2>;
 			};
+		};
+
+		i2c6: i2c@5c009000 {
+			compatible = "st,stm32mp15-i2c";
+			reg = <0x5c009000 0x400>;
+			interrupt-names = "event", "error";
+			interrupts = <GIC_SPI 135 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>;
+			clocks = <&rcc I2C6_K>;
+			resets = <&rcc I2C6_R>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			st,syscfg-fmp = <&syscfg 0x4 0x20>;
+			wakeup-source;
+			status = "disabled";
 		};
 
 		/*
