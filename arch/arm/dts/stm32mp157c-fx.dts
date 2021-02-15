@@ -34,3 +34,7 @@
 &uart7 {
 	status = "okay";
 };
+
+&bsec{
+	status = "okay";
+};
