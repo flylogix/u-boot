@@ -317,6 +317,19 @@
 	status = "okay";
 };
 
+&uart7 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart7_pins_c>;
+	status = "disabled";
+};
+
+&usart3 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&usart3_pins_b>;
+	uart-has-rtscts;
+	status = "disabled";
+};
+
 &usbh_ehci {
 	phys = <&usbphyc_port0>;
 	status = "okay";

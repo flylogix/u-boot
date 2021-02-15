@@ -1337,7 +1337,7 @@
 		pinctrl: pin-controller@50002000 {
 			#address-cells = <1>;
 			#size-cells = <1>;
-			compatible = "st,stm32mp157-pinctrl";
+			compatible = "st,stm32mp157-pinctrl-fx";
 			ranges = <0 0x50002000 0xa400>;
 			interrupt-parent = <&exti>;
 			st,syscfg = <&exti 0x60 0xff>;

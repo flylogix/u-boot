@@ -403,21 +403,6 @@
 };
 
 &pinctrl_z {
-	i2c2_pins_b2: i2c2-0 {
-		pins {
-			pinmux = <STM32_PINMUX('Z', 0, AF3)>; /* I2C2_SCL */
-			bias-disable;
-			drive-open-drain;
-			slew-rate = <0>;
-		};
-	};
-
-	i2c2_sleep_pins_b2: i2c2-sleep-0 {
-		pins {
-			pinmux = <STM32_PINMUX('Z', 0, ANALOG)>; /* I2C2_SCL */
-		};
-	};
-
 	i2c4_pins_z_a: i2c4-0 {
 		pins {
 			pinmux = <STM32_PINMUX('Z', 4, AF6)>; /* I2C4_SCL */			
