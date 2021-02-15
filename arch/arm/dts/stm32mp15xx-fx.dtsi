@@ -336,9 +336,10 @@
 };
 
 &usbotg_hs {
-	dr_mode = "peripheral";
-	phys = <&usbphyc_port1 0>;
-	phy-names = "usb2-phy";
+	compatible = "st,stm32mp1-fsotg", "snps,dwc2";
+	pinctrl-names = "default";
+	pinctrl-0 = <&usbotg_hs_pins_a &usbotg_fs_dp_dm_pins_a>;
+	vbus-supply = <&vbus_otg>;
 	status = "okay";
 };
 
