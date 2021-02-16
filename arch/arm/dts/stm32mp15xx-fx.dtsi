@@ -93,6 +93,10 @@
 	status = "disabled";
 };
 
+&dts {
+	status = "okay";
+};
+
 &i2c1 {
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&i2c1_pins_c>;
@@ -215,18 +219,18 @@
 			bst_out: boost {
 				regulator-name = "bst_out";
 				interrupts = <IT_OCP_BOOST 0>;
-			 };
+			};
 
 			vbus_otg: pwr_sw1 {
 				regulator-name = "vbus_otg";
 				interrupts = <IT_OCP_OTG 0>;
-			 };
+			};
 
 			vbus_sw: pwr_sw2 {
 				regulator-name = "vbus_sw";
 				interrupts = <IT_OCP_SWOUT 0>;
 				regulator-active-discharge = <1>;
-			 };
+			};
 		};
 
 		onkey {
@@ -245,7 +249,7 @@
 };
 
 &ipcc {
-	status = "disabled";
+	status = "okay";
 };
 
 &iwdg2 {
@@ -260,7 +264,7 @@
 	mbox-names = "vq0", "vq1", "shutdown";
 	interrupt-parent = <&exti>;
 	interrupts = <68 1>;
-	status = "disabled";
+	status = "okay";
 };
 
 &pwr_regulators {
@@ -269,15 +273,15 @@
 };
 
 &rng1 {
-	status = "disabled";
+	status = "okay";
 };
 
 &rtc {
-	status = "disabled";
+	status = "okay";
 };
 
 &bsec {
-	status = "disabled";
+	status = "okay";
 };
 
 &sdmmc1 {
