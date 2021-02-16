@@ -30,7 +30,7 @@
 };
 
 &adc {
-	status = "okay";
+	status = "disabled";
 };
 
 &clk_hse {

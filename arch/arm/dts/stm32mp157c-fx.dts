@@ -26,11 +26,3 @@
 		stdout-path = "serial0:115200n8";
 	};
 };
-
-&usart3 {
-	status = "okay";
-};
-
-&uart7 {
-	status = "okay";
-};

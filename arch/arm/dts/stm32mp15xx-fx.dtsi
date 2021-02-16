@@ -63,7 +63,7 @@
 
 &adc {
 	pinctrl-names = "default";
-	pinctrl-0 = <&adc12_ain_pins_a>, <&adc12_usb_cc_pins_a>;
+	pinctrl-0 = <&adc12_ain_pins_a>;
 	vdd-supply = <&vdd>;
 	vdda-supply = <&vdd>;
 	vref-supply = <&vrefbuf>;
@@ -260,7 +260,7 @@
 	mbox-names = "vq0", "vq1", "shutdown";
 	interrupt-parent = <&exti>;
 	interrupts = <68 1>;
-	status = "okay";
+	status = "disabled";
 };
 
 &pwr_regulators {
@@ -269,40 +269,15 @@
 };
 
 &rng1 {
-	status = "okay";
+	status = "disabled";
 };
 
 &rtc {
-	status = "okay";
-};
-
-&tamp {
-	status = "okay";
+	status = "disabled";
 };
 
 &bsec {
-	status = "okay";
-};
-
-&dma1{
-	status = "okay";
-	sram = <&dma_pool>;
-};
-
-&dma2{
 	status = "disabled";
-	sram = <&dma_pool>;
-};
-
-&dmamux1{
-	dma-masters = <&dma1>;
-	dma-channels = <8>;
-
-	status = "okay";
-};
-
-&hsem{
-	status = "okay";
 };
 
 &sdmmc1 {
@@ -386,11 +361,4 @@
 	regulator-max-microvolt = <2500000>;
 	vdda-supply = <&vdd>;
 	status = "okay";
-};
-
-&sram{
-	dma_pool:dma_pool@0{
-		reg = <0x50000 0x10000>;
-		pool;
-	};
 };

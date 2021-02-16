@@ -17,25 +17,6 @@
 		};
 	};
 
-	adc12_usb_cc_pins_a: adc12-usb-cc-pins-0 {
-		pins {
-			pinmux = <STM32_PINMUX('A', 4, ANALOG)>, /* ADC12 in18 */
-				 <STM32_PINMUX('A', 5, ANALOG)>; /* ADC12 in19 */
-		};
-	};
-	
-	dac_ch1_pins_a: dac-ch1-0 {
-		pins {
-			pinmux = <STM32_PINMUX('A', 4, ANALOG)>;
-		};
-	};
-
-	dac_ch2_pins_a: dac-ch2-0 {
-		pins {
-			pinmux = <STM32_PINMUX('A', 5, ANALOG)>;
-		};
-	};
-
 	i2c1_pins_c: i2c1-2 {
 		pins {
 			pinmux = <STM32_PINMUX('H', 11, AF5)>, /* I2C1_SCL */
