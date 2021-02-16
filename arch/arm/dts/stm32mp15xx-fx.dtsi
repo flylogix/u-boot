@@ -108,7 +108,7 @@
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&i2c2_pins_c>;
 	pinctrl-1 = <&i2c2_sleep_pins_c>;
-	status = "okay";
+	status = "disabled";
 	/delete-property/dmas;
 	/delete-property/dma-names;
 };
@@ -245,12 +245,12 @@
 };
 
 &ipcc {
-	status = "okay";
+	status = "disabled";
 };
 
 &iwdg2 {
 	timeout-sec = <32>;
-	status = "okay";
+	status = "disabled";
 };
 
 &m4_rproc {
