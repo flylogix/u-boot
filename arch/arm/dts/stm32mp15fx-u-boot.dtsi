@@ -165,3 +165,7 @@
 &sdmmc2 {
 	compatible = "st,stm32-sdmmc2", "arm,pl18x", "arm,primecell";
 };
+
+&usbotg_hs {
+	compatible = "st,stm32mp1-hsotg", "snps,dwc2";
+};

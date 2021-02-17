@@ -30,7 +30,7 @@
 };
 
 &adc {
-	status = "disabled";
+	status = "okay";
 };
 
 &clk_hse {
@@ -81,20 +81,22 @@
 
 	st,pkcs = <
 		CLK_CKPER_HSE
+		CLK_FMC_ACLK
 		CLK_ETH_DISABLED
 		CLK_SDMMC12_PLL4P
 		CLK_STGEN_HSE
-		CLK_USBPHY_DISABLED
+		CLK_USBPHY_HSE
 		CLK_SPI2S1_PLL3Q
 		CLK_SPI2S23_DISABLED
 		CLK_SPI45_DISABLED
 		CLK_SPI6_DISABLED
 		CLK_I2C46_HSI
 		CLK_SDMMC3_DISABLED
+		CLK_USBO_USBPHY
 		CLK_ADC_CKPER
 		CLK_CEC_DISABLED
 		CLK_I2C12_HSI
-		CLK_I2C35_DISABLED
+		CLK_I2C35_HSI
 		CLK_UART1_HSI
 		CLK_UART24_HSI
 		CLK_UART35_HSI
@@ -106,16 +108,16 @@
 		CLK_SAI3_DISABLED
 		CLK_SAI4_DISABLED
 		CLK_RNG1_LSI
-		CLK_LPTIM1_DISABLED
-		CLK_LPTIM23_DISABLED
-		CLK_LPTIM45_DISABLED
+		CLK_LPTIM1_PCLK1
+		CLK_LPTIM23_PCLK3
+		CLK_LPTIM45_LSE
 	>;
 
 	/* VCO = 1300.0 MHz => P = 650 (CPU) */
 	pll1: st,pll@0 {
 		compatible = "st,stm32mp1-pll";
 		reg = <0>;
-		cfg = < 2 80 0 1 1 PQR(1,0,0) >;
+		cfg = < 2 80 0 0 0 PQR(1,0,0) >;
 		frac = < 0x800 >;
 		u-boot,dm-pre-reloc;
 	};
@@ -124,7 +126,7 @@
 	pll2: st,pll@1 {
 		compatible = "st,stm32mp1-pll";
 		reg = <1>;
-		cfg = < 2 65 1 1 0 PQR(1,0,1) >;
+		cfg = < 2 65 1 0 0 PQR(1,1,1) >;
 		frac = < 0x1400 >;
 		u-boot,dm-pre-reloc;
 	};
@@ -133,7 +135,7 @@
 	pll3: st,pll@2 {
 		compatible = "st,stm32mp1-pll";
 		reg = <2>;
-		cfg = < 1 33 1 16 36 PQR(1,1,0) >;
+		cfg = < 1 33 1 16 36 PQR(1,1,1) >;
 		frac = < 0x1a04 >;
 		u-boot,dm-pre-reloc;
 	};
@@ -142,7 +144,7 @@
 	pll4: st,pll@3 {
 		compatible = "st,stm32mp1-pll";
 		reg = <3>;
-		cfg = < 3 98 5 7 7 PQR(1,0,0) >;
+		cfg = < 3 98 5 7 7 PQR(1,1,1) >;
 		u-boot,dm-pre-reloc;
 	};
 };
@@ -177,4 +179,9 @@
 		/* pull-up on rx to avoid floating level */
 		bias-pull-up;
 	};
+};
+
+&usbotg_hs {
+	u-boot,force-b-session-valid;
+	hnp-srp-disable;
 };
