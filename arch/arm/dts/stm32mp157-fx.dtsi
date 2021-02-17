@@ -1460,7 +1460,7 @@
 		pinctrl_z: pin-controller-z@54004000 {
 			#address-cells = <1>;
 			#size-cells = <1>;
-			compatible = "st,stm32mp157-fx-pinctrl-z";
+			compatible = "st,stm32mp157-fx-pinctrl";
 			ranges = <0 0x54004000 0x400>;
 			pins-are-numbered;
 			interrupt-parent = <&exti>;
