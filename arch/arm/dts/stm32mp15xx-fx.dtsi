@@ -212,11 +212,11 @@
 			};
 
 			vdda: ldo5 {
-				regulator-name = "vdda";
-				regulator-min-microvolt = <2900000>;
-				regulator-max-microvolt = <2900000>;
+				regulator-name = "vdd_sd";
+				regulator-min-microvolt = <3300000>;
+				regulator-max-microvolt = <3300000>;
 				interrupts = <IT_CURLIM_LDO5 0>;
-				regulator-boot-on;
+				regulator-always-on;
 			};
 
 			v1v2_hdmi: ldo6 {
@@ -343,6 +343,13 @@
 
 &usbh_ehci {
 	phys = <&usbphyc_port0>;
+	phy-names = "usb";
+	status = "okay";
+};
+
+&usbh_ohci {
+	phys = <&usbphyc_port0>;
+	phy-names = "usb";
 	status = "okay";
 };
 
