@@ -344,20 +344,20 @@
 &usbh_ehci {
 	phys = <&usbphyc_port0>;
 	phy-names = "usb";
-	status = "okay";
+	status = "disabled";
 };
 
 &usbh_ohci {
 	phys = <&usbphyc_port0>;
 	phy-names = "usb";
-	status = "okay";
+	status = "disabled";
 };
 
 &usbotg_hs {
 	dr_mode = "peripheral";
 	phys = <&usbphyc_port1 0>;
 	phy-names = "usb2-phy";
-	status = "okay";
+	status = "disabled";
 };
 
 &usbphyc {
