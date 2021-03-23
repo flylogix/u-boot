@@ -329,9 +329,9 @@
 	#address-cells = <1>;
 	#size-cells = <0>;
 
-	brcmf:bcrmf@1{
+	unifi_sdio:unifi_sdio@1{
 		reg = <1>;
-		compatible = "brcm,bcm4329-fmac";
+		compatible = "unifi_sdio";
 	};
 };
 
