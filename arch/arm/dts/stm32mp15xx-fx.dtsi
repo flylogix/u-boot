@@ -59,6 +59,22 @@
 			no-map;
 		};
 	};
+
+	usb_phy_tuning:usb-phy-tuning {
+		st,hs-dc-level = <2>;
+		st,fs-rftime-tuning;
+		st,hs-rftime-reduction;
+		st,hs-current-trim = <15>;
+		st,hs-impedance-trim = <1>;
+		st,squelch-level = <3>;
+		st,hs-rx-offset = <2>;
+		st,no-lsfs-sc;
+	};
+
+	wifi_pwrseq:wifi-pwrseq {
+		compatible = "mmc-pwrseq-simple";
+		reset-gpios = <&gpioz 7 GPIO_ACTIVE_LOW>;
+	};
 };
 
 &adc {
@@ -69,19 +85,11 @@
 	vref-supply = <&vrefbuf>;
 	status = "disabled";
 	adc1: adc@0 {
-		/*
-		 * Type-C USB_PWR_CC1 & USB_PWR_CC2 on in18 & in19.
-		 * Use at least 5 * RC time, e.g. 5 * (Rp + Rd) * C:
-		 * 5 * (56 + 47kOhms) * 5pF => 2.5us.
-		 * Use arbitrary margin here (e.g. 5us).
-		 */
 		st,min-sample-time-nsecs = <5000>;
-		/* AIN connector, USB Type-C CC1 & CC2 */
 		st,adc-channels = <0 1 6 13 18 19>;
 		status = "okay";
 	};
 	adc2: adc@100 {
-		/* AIN connector, USB Type-C CC1 & CC2 */
 		st,adc-channels = <0 1 2 6 18 19>;
 		st,min-sample-time-nsecs = <5000>;
 		status = "okay";

@@ -54,22 +54,6 @@
 		interrupt-parent = <&intc>;
 	};
 
-	usb_phy_tuning:usb-phy-tuning {
-		st,hs-dc-level = <2>;
-		st,fs-rftime-tuning;
-		st,hs-rftime-reduction;
-		st,hs-current-trim = <15>;
-		st,hs-impedance-trim = <1>;
-		st,squelch-level = <3>;
-		st,hs-rx-offset = <2>;
-		st,no-lsfs-sc;
-	};
-
-	wifi_pwrseq:wifi-pwrseq {
-		compatible = "mmc-pwrseq-simple";
-		reset-gpios = <&gpioz 7 GPIO_ACTIVE_LOW>;
-	};
-
 	clocks {
 		clk_hse: clk-hse {
 			#clock-cells = <0>;
