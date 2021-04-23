@@ -83,14 +83,14 @@
 	vdd-supply = <&vdd>;
 	vdda-supply = <&vdd>;
 	vref-supply = <&vrefbuf>;
-	status = "disabled";
+	status = "okay";
 	adc1: adc@0 {
 		st,min-sample-time-nsecs = <5000>;
-		st,adc-channels = <0 1 6 13 18 19>;
+		st,adc-channels = <0 1 2 3 4 5 6 7>;
 		status = "okay";
 	};
 	adc2: adc@100 {
-		st,adc-channels = <0 1 2 6 18 19>;
+		st,adc-channels = <0 1>;
 		st,min-sample-time-nsecs = <5000>;
 		status = "okay";
 	};
