@@ -60,6 +60,16 @@
 		};
 	};
 
+	led {
+		compatible = "gpio-leds";
+		blue {
+			label = "heartbeat";
+			gpios = <&gpiof 6 GPIO_ACTIVE_HIGH>;
+			linux,default-trigger = "heartbeat";
+			default-state = "off";
+		};
+	};
+
 	ldosel {
 		compatible = "gpio-ldosel";
 		gpios = <&gpiof 14 GPIO_ACTIVE_HIGH>;

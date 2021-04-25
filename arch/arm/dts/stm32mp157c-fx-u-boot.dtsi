@@ -14,6 +14,11 @@
 		usb0 = &usbotg_hs;
 	};
 
+	config {
+		u-boot,boot-led = "heartbeat";
+		u-boot,error-led = "error";
+	};
+
 	firmware {
 		optee {
 			compatible = "linaro,optee-tz";
@@ -25,6 +30,15 @@
 		optee@de000000 {
 			reg = <0xde000000 0x02000000>;
 			no-map;
+		};
+	};
+
+	led {
+		red {
+			label = "error";
+			gpios = <&gpiof 7 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			status = "okay";
 		};
 	};
 };
