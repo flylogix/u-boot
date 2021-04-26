@@ -70,13 +70,6 @@
 		};
 	};
 
-	ldosel {
-		compatible = "gpio-ldosel";
-		gpios = <&gpiof 14 GPIO_ACTIVE_HIGH>;
-		default-state = "on";
-		status = "okay";
-	};
-
 	usb_phy_tuning:usb-phy-tuning {
 		st,hs-dc-level = <2>;
 		st,fs-rftime-tuning;
