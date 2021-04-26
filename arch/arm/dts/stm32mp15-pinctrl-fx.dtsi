@@ -12,7 +12,7 @@
 				 <STM32_PINMUX('A', 7, ANALOG)>, /* ADC1 in7 */
 				 <STM32_PINMUX('B', 1, ANALOG)>, /* ADC1 in5 */
 				 <STM32_PINMUX('C', 4, ANALOG)>, /* ADC1 in4 */
-				 <STM32_PINMUX('F', 11, ANALOG)>, /* ADC1 in2 */
+				 <STM32_PINMUX('E', 12, ANALOG)>, /* ADC1 in2 */
 				 <STM32_PINMUX('F', 12, ANALOG)>; /* ADC1 in6 */
 		};
 	};
