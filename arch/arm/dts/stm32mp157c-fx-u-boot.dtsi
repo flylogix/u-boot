@@ -43,7 +43,7 @@
 		ldosel {
 			label = "sd-ldosel";
 			gpios = <&gpiof 14 GPIO_ACTIVE_HIGH>;
-			default-state = "on";
+			default-state = "off";
 			status = "okay";
 		};
 	};
